@@ -3,11 +3,12 @@
   <MenuItem v-for="item in menuItems"
   @click="setActive(item.name)" :key="item" :name=item.name
   :class="this.$store.state.activeMenu == item.name ? 'bg-green-400' : ''"
-  class="hover:bg-green-200" />
+  class="hover:bg-green-200 text-xl overflow-hidden pl-3 select-none"/>
 </header>
 </template>
 
 <script>
+import Container from '../Container/Container.vue'
 import MenuItem from './GameHeaderMenuItem.vue'
 
 export default {
@@ -23,29 +24,7 @@ export default {
   },
   data () {
     return {
-      menuItems: {
-        inventory: {
-          name: 'Inventory'
-        },
-        upgrades: {
-          name: 'Upgrades'
-        },
-        mining: {
-          name: 'Mining'
-        },
-        woodcutting: {
-          name: 'Woodcutting'
-        },
-        hunting: {
-          name: 'Hunting'
-        },
-        shop: {
-          name: 'Shop'
-        },
-        statistics: {
-          name: 'Statitics'
-        }
-      }
+      menuItems: Container.components
     }
   }
 }
