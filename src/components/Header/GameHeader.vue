@@ -1,10 +1,10 @@
 <template lang="">
-<div class="grid grid-cols-3 sm:grid-cols-6">
+<header class="grid grid-cols-3 sm:grid-cols-6">
   <MenuItem v-for="item in menuItems"
   @click="setActive(item.name)" :key="item" :name=item.name
   :class="this.$store.state.activeMenu == item.name ? 'bg-green-400' : ''"
   class="hover:bg-green-200" />
-</div>
+</header>
 </template>
 
 <script>
@@ -47,8 +47,7 @@ export default {
         }
       }
     }
-  },
-  created () {}
+  }
 }
 </script>
 

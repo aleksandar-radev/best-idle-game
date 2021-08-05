@@ -1,13 +1,13 @@
 <template>
-  <div class="home">
+  <div class="container m-auto h-screen">
     <Header />
     <Container />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import Header from '@/components/Header/GameHeader.vue'
+
+import Header from '../components/Header/GameHeader.vue'
 import Container from '../components/Container/Container.vue'
 
 export default {
