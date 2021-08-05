@@ -5,16 +5,16 @@
 </template>
 
 <script>
-import Inventory from './Inventory/Inventory.vue'
-import Mine from './Mining/Mine.vue'
-import Upgrades from './Upgrades/Upgrades.vue'
+import Inventory from './inventory/Inventory.vue'
+import Mine from './mining/Mine.vue'
+import Upgrades from './upgrades/Upgrades.vue'
 
 export default {
   name: 'Container',
   components: {
     Inventory,
-    Mine,
-    Upgrades
+    Upgrades,
+    Mine
   },
   props: {},
   methods: {
