@@ -1,15 +1,20 @@
 <template lang="">
-<div>
-  Mining 3123
+<div class="grid grid-cols-2">
+  <ToolStats class="bg-red-50"/>
+  <Areas class="bg-green-100"/>
 </div>
 </template>
 
 <script>
-//  import MenuItem from './GameHeaderMenuItem.vue'
+import Areas from './components/Areas.vue'
+import ToolStats from './components/ToolStats.vue'
 
 export default {
   name: 'Mine',
-  components: {},
+  components: {
+    ToolStats,
+    Areas
+  },
   props: {},
   methods: {},
   data () {

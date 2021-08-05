@@ -2,7 +2,8 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    activeMenu: 'Inventory'
+    // initial active menu, for start screen
+    activeMenu: 'Mine'
   },
   mutations: {
     setActiveMenu (state, menuItem) {
