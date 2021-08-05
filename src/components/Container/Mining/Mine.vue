@@ -8,7 +8,7 @@
 //  import MenuItem from './GameHeaderMenuItem.vue'
 
 export default {
-  name: 'Mining',
+  name: 'Mine',
   components: {},
   props: {},
   methods: {},

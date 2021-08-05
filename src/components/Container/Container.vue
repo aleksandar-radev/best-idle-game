@@ -1,19 +1,20 @@
 <template lang="">
 <div class="grid overflow-x-auto bg-red-100">
   <component :is='getActiveMenu()'></component>
-    <br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd
   </div>
 </template>
 
 <script>
 import Inventory from './Inventory/Inventory.vue'
-import Mining from './Mining/Mining.vue'
+import Mine from './Mining/Mine.vue'
+import Upgrades from './Upgrades/Upgrades.vue'
 
 export default {
   name: 'Container',
   components: {
     Inventory,
-    Mining
+    Mine,
+    Upgrades
   },
   props: {},
   methods: {
@@ -21,6 +22,7 @@ export default {
       return this.$store.state.activeMenu
     },
     setHeight () {
+      // height = total screen height - header
       this.$el.style.height = `calc(100vh - ${this.getHeaderHeight()}px)`
     }
   },
@@ -38,7 +40,7 @@ export default {
     this.setHeight()
     window.addEventListener('resize', (e) => {
       if (resizeTimer) clearTimeout(resizeTimer)
-      resizeTimer = setTimeout(() => { this.setHeight() }, 200)
+      resizeTimer = setTimeout(() => { this.setHeight() }, 250)
     })
   }
 }
