@@ -7,7 +7,7 @@
 //  import MenuItem from './GameHeaderMenuItem.vue'
 
 export default {
-  name: '',
+  name: 'Log',
   components: {},
   props: {},
   methods: {},

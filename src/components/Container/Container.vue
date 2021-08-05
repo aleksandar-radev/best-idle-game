@@ -7,7 +7,7 @@
 <script>
 import Inventory from './inventory/Inventory.vue'
 import Upgrades from './upgrades/Upgrades.vue'
-import Mine from './mine/Mine.vue'
+import Mine from './fields/mine/Mine.vue'
 
 export default {
   name: 'Container',
