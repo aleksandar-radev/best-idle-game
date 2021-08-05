@@ -6,9 +6,8 @@
 </template>
 
 <script>
-
-import Header from '../components/Header/GameHeader.vue'
-import Container from '../components/Container/Container.vue'
+import Header from '../components/header/GameHeader.vue'
+import Container from '../components/container/Container.vue'
 
 export default {
   name: 'Home',

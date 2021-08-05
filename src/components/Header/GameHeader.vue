@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Container from '../Container/Container.vue'
+import Container from '../container/Container.vue'
 import MenuItem from './GameHeaderMenuItem.vue'
 
 export default {

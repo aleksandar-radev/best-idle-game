@@ -6,8 +6,8 @@
 
 <script>
 import Inventory from './inventory/Inventory.vue'
-import Mine from './mining/Mine.vue'
 import Upgrades from './upgrades/Upgrades.vue'
+import Mine from './mine/Mine.vue'
 
 export default {
   name: 'Container',
