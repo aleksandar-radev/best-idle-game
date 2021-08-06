@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import Areas from './components/Areas.vue'
-import Material from './components/Material.vue'
-import ToolStats from './components/ToolStats.vue'
+import Areas from '../components/Areas.vue'
+import Material from '../components/Material.vue'
+import ToolStats from '../components/ToolStats.vue'
 
 export default {
   name: 'Mine',

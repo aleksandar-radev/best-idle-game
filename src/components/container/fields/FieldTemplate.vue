@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Log from '../mine/components/Log.vue'
+import Log from './components/Log.vue'
 import Areas from './components/Areas.vue'
 
 export default {
