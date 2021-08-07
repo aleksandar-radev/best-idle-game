@@ -1,26 +1,34 @@
 <template lang="">
 <div>
+  <Tool />
+  <Areas :areas="this.areas"/>
   <Log />
-  <Areas />
 </div>
 </template>
 
 <script>
 import Log from './components/Log.vue'
 import Areas from './components/Areas.vue'
+import Tool from './components/Tool.vue'
 
 export default {
   name: 'FieldTemplate',
   components: {
-    Log,
-    Areas
+    Tool,
+    Areas,
+    Log
   },
-  props: {},
+  props: {
+    stats: Object
+  },
   methods: {},
   data () {
-    return {}
+    return {
+      areas: this.stats.areas
+    }
   },
   created () {
+    console.log(this.areas)
     return {}
   }
 }

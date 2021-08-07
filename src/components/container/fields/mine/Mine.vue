@@ -1,27 +1,26 @@
 <template lang="">
 <div class="grid grid-cols-2">
-  <ToolStats class="bg-red-50 span"/>
-  <Areas class="bg-green-100"/>
-  <Material class="bg-green-400"/>
+  <FieldTemplate class="bg-red-50 span" :stats="this.stats"/>
 </div>
 </template>
 
 <script>
-import Areas from '../components/Areas.vue'
-import Material from '../components/Material.vue'
-import ToolStats from '../components/ToolStats.vue'
+import FieldTemplate from '../FieldTemplate.vue'
+import areas from './areas'
 
 export default {
   name: 'Mine',
   components: {
-    ToolStats,
-    Areas,
-    Material
+    FieldTemplate
   },
   props: {},
   methods: {},
   data () {
-    return {}
+    return {
+      stats: {
+        areas
+      }
+    }
   },
   created () {
     return {}

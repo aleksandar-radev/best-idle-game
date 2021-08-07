@@ -1,29 +1,27 @@
 <template lang="">
-<Area v-for="area in areas" :key="area" :name="area.name" />
+<div>
+  {{ name }}
+</div>
 </template>
 
 <script>
-import Area from './Area.vue'
+//  import MenuItem from './GameHeaderMenuItem.vue'
 
 export default {
-  name: 'Areas',
-  components: {
-    Area
-  },
+  name: 'Area',
+  components: {},
   props: {
-    areas: Object
+    name: String
   },
   methods: {},
   data () {
     return {}
   },
   created () {
-    console.log(this.areas[0])
     return {}
   }
 }
 </script>
 
 <style module lang="scss">
-
 </style>
