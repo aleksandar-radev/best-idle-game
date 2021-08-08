@@ -1,12 +1,12 @@
 <template lang="">
-<div class="grid grid-cols-2">
-  <FieldTemplate class="bg-red-50 span" :stats="this.stats"/>
-</div>
+  <FieldTemplate :stats="this.stats"/>
 </template>
 
 <script>
 import FieldTemplate from '../FieldTemplate.vue'
-import areas from './areas'
+import areas from './areas.js'
+import tool from './tool.js'
+import materials from './materials.js'
 
 export default {
   name: 'Mine',
@@ -18,7 +18,9 @@ export default {
   data () {
     return {
       stats: {
-        areas
+        areas,
+        tool,
+        materials
       }
     }
   },
@@ -29,5 +31,4 @@ export default {
 </script>
 
 <style module lang="scss">
-
 </style>

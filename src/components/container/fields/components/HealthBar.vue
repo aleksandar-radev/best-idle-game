@@ -1,8 +1,5 @@
 <template lang="">
-<div class="overflow-x-auto">
-  <div v-for="(item, index) in materials" :key="index">
-    {{ item.health }}
-  </div>
+<div>
 </div>
 </template>
 
@@ -10,11 +7,9 @@
 //  import MenuItem from './GameHeaderMenuItem.vue'
 
 export default {
-  name: 'Material',
+  name: 'HealthBar',
   components: {},
-  props: {
-    materials: Object
-  },
+  props: {},
   methods: {},
   data () {
     return {}

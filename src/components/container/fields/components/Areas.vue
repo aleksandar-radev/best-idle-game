@@ -1,5 +1,7 @@
 <template lang="">
-<Area v-for="area in areas" :key="area" :name="area.name" />
+<div class="grid sm:grid-cols-2 overflow-x-auto" style="grid-auto-rows: 50%">
+  <Area v-for="(area, index) in areas" :key="area" :areas="areas" :index="index" />
+</div>
 </template>
 
 <script>
@@ -24,6 +26,6 @@ export default {
 }
 </script>
 
-<style module lang="scss">
+<style lang="scss">
 
 </style>

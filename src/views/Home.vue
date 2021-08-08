@@ -1,5 +1,5 @@
 <template>
-  <div class="container m-auto h-screen">
+  <div class="container m-auto mt-1 mb-1">
     <Header />
     <Container />
   </div>

@@ -94,5 +94,28 @@ export default {
     materialsDropped: 0,
     requiredMaterialsForNextLevel: 20,
     unlocked: false
+  },
+  4: {
+    materials: {
+      topaz: { ...materials.topaz, chance: 2000 },
+      bloodstone: { ...materials.bloodstone, chance: 1750 },
+      sulfur: { ...materials.sulfur, chance: 1300 },
+      zeolite: { ...materials.zeolite, chance: 600 },
+      lapisLazuli: { ...materials.lapisLazuli, chance: 800 },
+      cavansite: { ...materials.cavansite, chance: 550 },
+      garnet: { ...materials.garnet, chance: 300 },
+      howlite: { ...materials.howlite, chance: 190 },
+      zircon: { ...materials.zircon, chance: 80 },
+      tanzanite: { ...materials.tanzanite, chance: 50 },
+      blackStarDiopside: { ...materials.blackStarDiopside, chance: 1 }
+    },
+    name: 'Krion mine',
+    index: 4,
+    level: 1,
+    totalLevel: 1,
+    previousAreaLevelRequired: 50,
+    materialsDropped: 0,
+    requiredMaterialsForNextLevel: 20,
+    unlocked: false
   }
 }
