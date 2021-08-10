@@ -4,6 +4,7 @@ import mineTool from './tool'
 
 const main = {
   active: false,
+  activeArea: 0,
 
   areas: mineAreas,
   materials: mineMaterials,

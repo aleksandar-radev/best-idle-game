@@ -1,14 +1,22 @@
 <template lang="">
-<div class="grid outline-black select-none p-4" style="grid-template-rows: 15% 30% 35% 20%">
+<div class="grid outline-black select-none p-4"
+    :class="{'bg-gray-300' : isActive()}"
+    style="grid-template-rows: 15% 30% 35% 20%"
+    @click="this.setActive">
   <div>{{ area.name }}</div>
 
   <div class="grid grid-cols-2 overflow-hidden">
-    <div title="Area current level / Area max level" class="col-span-2">{{ area.level }} / {{ area.totalLevel }}</div>
+
+    <div title="Area current level / Area max level" class="col-span-2">
+      <div contenteditable="true" class="inline"> {{ area.level }}</div>
+      / {{ area.totalLevel }}
+    </div>
+
     <div>
-      <img src="@/assets/leftArrow.png" class="h-7 m-auto">
+      <img src="@/assets/leftArrow.png" class="h-7 m-auto" @click="decreaseAreaLevel">
     </div>
     <div>
-      <img src="@/assets/rightArrow.png" class="h-7 m-auto">
+      <img src="@/assets/rightArrow.png" class="h-7 m-auto" @click="increaseAreaLevel">
     </div>
   </div>
 
@@ -29,7 +37,23 @@ export default {
     areas: Object,
     index: String
   },
-  methods: {},
+  methods: {
+    isActive () {
+      return this.$main.mine.activeArea === this.area.index
+    },
+    setActive () {
+      this.$main.mine.activeArea = this.area.index
+    },
+    increaseAreaLevel () {
+      if (this.area.level === this.area.totalLevel) {
+        this.area.totalLevel++
+      }
+      this.area.level++
+    },
+    decreaseAreaLevel () {
+      if (this.area.level > 1) this.area.level--
+    }
+  },
   data () {
     return {
       area: this.areas[this.index],
