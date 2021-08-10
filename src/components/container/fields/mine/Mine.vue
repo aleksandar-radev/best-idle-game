@@ -13,17 +13,16 @@ export default {
   props: {},
   methods: {},
   data () {
-    this.store = this.$store.data.mine
+    const self = this.$main.mine
     return {
       stats: {
-        areas: this.store.areas,
-        tool: this.store.tool,
-        materials: this.store.materials
+        areas: self.areas,
+        tool: self.tool,
+        materials: self.materials
       }
     }
   },
   created () {
-    return {}
   }
 }
 </script>

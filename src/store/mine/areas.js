@@ -1,6 +1,6 @@
 import materials from './materials.js'
 
-export default {
+const areas = {
   0: {
     materials: {
       stone: { ...materials.stone, chance: 1000 },
@@ -119,3 +119,5 @@ export default {
     unlocked: false
   }
 }
+
+export default areas

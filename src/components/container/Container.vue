@@ -19,7 +19,7 @@ export default {
   props: {},
   methods: {
     getActiveMenu () {
-      return this.$store.state.activeMenu
+      return this.$state.activeMenu
     },
     setHeight () {
       // height = total screen height - header - margin top + bot

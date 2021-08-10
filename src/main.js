@@ -6,5 +6,7 @@ import './assets/styles/tailwind.css'
 import helpers from './helpers'
 
 const app = createApp(App)
+
 app.mixin(helpers)
+
 app.use(store).use(router).mount('#app')

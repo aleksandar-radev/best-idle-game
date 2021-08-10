@@ -1,7 +1,5 @@
 import { reactive } from 'vue'
-import mineAreas from './mine/areas'
-import mineMaterials from './mine/materials'
-import mineTool from './mine/tool'
+import mineMain from './mine'
 
 export default function (app, options) {
   const state = {
@@ -11,23 +9,17 @@ export default function (app, options) {
     }
   }
 
-  const data = {
-    mine: {
-      areas: mineAreas,
-      materials: mineMaterials,
-      tool: mineTool
-    }
-  }
-
   const methods = {
-
   }
 
-  app.config.globalProperties.$store = reactive({
-    state,
-    data,
-    methods
-  })
+  const main = {
+    coins: 10,
+    mine: { ...mineMain }
+  }
+
+  app.config.globalProperties.$state = reactive({ ...state })
+  app.config.globalProperties.$methods = reactive({ ...methods })
+  app.config.globalProperties.$main = reactive({ ...main })
 
   return app
 }

@@ -1,4 +1,4 @@
-export default {
+const tool = {
   index: 0,
   upgrade: {
     index: 0,
@@ -27,3 +27,5 @@ export default {
   lookingForTime: 2_000,
   chanceForDoubleMaterial: 0
 }
+
+export default tool

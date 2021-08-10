@@ -2,7 +2,7 @@
 <header class="grid grid-cols-3 sm:grid-cols-6">
   <MenuItem v-for="item in menuItems"
   @click="setActiveMenu(item.name)" :key="item" :name=item.name
-  :class="this.$store.state.activeMenu == item.name ? 'bg-green-400' : ''"
+  :class="this.$state.activeMenu == item.name ? 'bg-green-400' : ''"
   class="hover:bg-green-200 text-xl overflow-hidden px-3 select-none"/>
 </header>
 </template>
@@ -19,7 +19,7 @@ export default {
   props: {},
   methods: {
     setActiveMenu (itemName) {
-      this.$store.state.setActiveMenu(itemName)
+      this.$state.setActiveMenu(itemName)
     }
   },
   data () {
