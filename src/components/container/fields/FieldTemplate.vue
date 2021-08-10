@@ -36,7 +36,6 @@ export default {
     }
   },
   created () {
-    console.log(this.areas)
     return {}
   }
 }

@@ -1,7 +1,7 @@
 <template lang="">
 <header class="grid grid-cols-3 sm:grid-cols-6">
   <MenuItem v-for="item in menuItems"
-  @click="setActive(item.name)" :key="item" :name=item.name
+  @click="setActiveMenu(item.name)" :key="item" :name=item.name
   :class="this.$store.state.activeMenu == item.name ? 'bg-green-400' : ''"
   class="hover:bg-green-200 text-xl overflow-hidden px-3 select-none"/>
 </header>
@@ -18,14 +18,16 @@ export default {
   },
   props: {},
   methods: {
-    setActive (itemName) {
-      this.$store.commit('setActiveMenu', itemName)
+    setActiveMenu (itemName) {
+      this.$store.state.setActiveMenu(itemName)
     }
   },
   data () {
     return {
       menuItems: Container.components
     }
+  },
+  created () {
   }
 }
 </script>

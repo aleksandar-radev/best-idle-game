@@ -20,7 +20,6 @@ export default {
     return {}
   },
   created () {
-    console.log(this.areas[0])
     return {}
   }
 }

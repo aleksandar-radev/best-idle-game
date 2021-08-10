@@ -4,9 +4,6 @@
 
 <script>
 import FieldTemplate from '../FieldTemplate.vue'
-import areas from './areas.js'
-import tool from './tool.js'
-import materials from './materials.js'
 
 export default {
   name: 'Mine',
@@ -16,11 +13,12 @@ export default {
   props: {},
   methods: {},
   data () {
+    this.store = this.$store.data.mine
     return {
       stats: {
-        areas,
-        tool,
-        materials
+        areas: this.store.areas,
+        tool: this.store.tool,
+        materials: this.store.materials
       }
     }
   },

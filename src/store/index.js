@@ -1,19 +1,33 @@
-import { createStore } from 'vuex'
+import { reactive } from 'vue'
+import mineAreas from './mine/areas'
+import mineMaterials from './mine/materials'
+import mineTool from './mine/tool'
 
-export default createStore({
-  state: {
-    // initial active menu, for start screen
-    activeMenu: 'Mine'
-  },
-  mutations: {
-    setActiveMenu (state, menuItem) {
-      state.activeMenu = menuItem
+export default function (app, options) {
+  const state = {
+    activeMenu: 'Mine', // initial active menu, for start screen
+    setActiveMenu (menuItem) {
+      this.activeMenu = menuItem
     }
-  },
-  actions: {
+  }
 
-  },
-  modules: {
+  const data = {
+    mine: {
+      areas: mineAreas,
+      materials: mineMaterials,
+      tool: mineTool
+    }
+  }
+
+  const methods = {
 
   }
-})
+
+  app.config.globalProperties.$store = reactive({
+    state,
+    data,
+    methods
+  })
+
+  return app
+}
