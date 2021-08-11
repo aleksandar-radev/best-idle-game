@@ -6,7 +6,7 @@
 import FieldTemplate from '../FieldTemplate.vue'
 
 export default {
-  name: 'Mine',
+  name: 'mine',
   components: {
     FieldTemplate
   },
@@ -18,7 +18,8 @@ export default {
       stats: {
         areas: self.areas,
         tool: self.tool,
-        materials: self.materials
+        materials: self.materials,
+        type: this.$options.name.toLowerCase()
       }
     }
   },

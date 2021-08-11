@@ -2,7 +2,7 @@
 <div class="grid overflow-hidden" style="grid-template-rows: 35% 25% 30% 10%; grid-template-columns: repeat(3, 33.3%)">
   <Tool class=" outline-black" :tool="this.tool"/>
   <Areas class="row-span-2 col-span-2 outline-black" :areas="this.areas"/>
-  <Material class=" outline-black" :materials="this.materials"/>
+  <Material class=" outline-black" :type="this.type"/>
   <Log class="col-span-3 outline-black" />
   <HealthBar class="col-span-3 outline-black asd" />
 </div>
@@ -32,7 +32,7 @@ export default {
     return {
       areas: this.stats.areas,
       tool: this.stats.tool,
-      materials: this.stats.materials
+      type: this.stats.type
     }
   },
   created () {

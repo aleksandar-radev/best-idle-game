@@ -24,7 +24,7 @@ export default {
     setHeight () {
       // height = total screen height - header - margin top + bot
       // on Home.vue (4 + 4) ***have to fix later
-      this.$el.style.height = `calc(100vh - ${this.getHeaderHeight()}px - 8px)`
+      this.$el.style.height = `calc(100vh - ${this.$state.getHeaderHeight()}px - 8px)`
     }
   },
   data () {

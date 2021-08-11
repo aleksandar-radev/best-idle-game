@@ -1,31 +1,35 @@
 <template lang="">
 <div class="grid outline-black select-none p-4"
     :class="{'bg-gray-300' : isActive()}"
-    style="grid-template-rows: 15% 30% 35% 20%"
-    @click="this.setActive">
-  <div>{{ area.name }}</div>
+    style="grid-template-rows: 15% 30% 35% 20%">
+  <div>
+    {{ area.name }}
+  </div>
 
   <div class="grid grid-cols-2 overflow-hidden">
-
     <div title="Area current level / Area max level" class="col-span-2">
-      <div contenteditable="true" class="inline"> {{ area.level }}</div>
+      <input type="number" min="1" :max="area.totalLevel" class="inline w-12 bg-transparent" v-model="area.level" @input="setLevel">
       / {{ area.totalLevel }}
     </div>
 
     <div>
-      <img src="@/assets/leftArrow.png" class="h-7 m-auto" @click="decreaseAreaLevel">
+      <img src="@/assets/leftArrow.png" class="h-7 m-auto" @click="decreaseLevel">
     </div>
     <div>
-      <img src="@/assets/rightArrow.png" class="h-7 m-auto" @click="increaseAreaLevel">
+      <img src="@/assets/rightArrow.png" class="h-7 m-auto" @click="increaseLevel">
     </div>
   </div>
 
-  <div v-if="area.unlocked" class="bg-green-500">{{ "Area unlocked"}}</div>
-  <div v-else-if="previousArea !== undefined" class="m-1 bg-gray-400">
+  <div v-if="area.unlocked" class="bg-green-500" @click="this.setActive">
+    {{ "Area unlocked"}}
+  </div>
+  <div v-else-if="previousArea !== undefined" class="m-1 bg-gray-400" @click="this.setActive">
     Locked. Level <strong>{{`${area.previousAreaLevelRequired}`}}</strong> {{`${previousArea.name}`}} required
   </div>
 
-  <div> {{ `${area.materialsDropped} / ${area.requiredMaterialsForNextLevel}` }}</div>
+  <div>
+    {{ `${area.materialsDropped} / ${area.requiredMaterialsForNextLevel}` }}
+  </div>
 </div>
 </template>
 
@@ -44,14 +48,17 @@ export default {
     setActive () {
       this.$main.mine.activeArea = this.area.index
     },
-    increaseAreaLevel () {
+    increaseLevel () {
       if (this.area.level === this.area.totalLevel) {
         this.area.totalLevel++
       }
       this.area.level++
     },
-    decreaseAreaLevel () {
+    decreaseLevel () {
       if (this.area.level > 1) this.area.level--
+    },
+    setLevel (e) {
+      if (e.target.value >= this.area.totalLevel) this.area.level = this.area.totalLevel
     }
   },
   data () {
