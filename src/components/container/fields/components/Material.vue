@@ -1,8 +1,7 @@
 <template lang="">
 <div class="grid" @click="startAction">
   <div class="self-center" v-bind="material">
-    {{ material ?? `Click here to start ${getAction()}` }}
-    {{ getMaterial() }}
+    {{ material ? material.name : `Click here to start ${getAction()}` }}
   </div>
 </div>
 </template>
@@ -22,9 +21,6 @@ export default {
     startAction () {
       this.$methods.main(this.type)
       console.log(this.$main[this.type].material)
-    },
-    getMaterial () {
-      return this.$main[this.type].material
     }
   },
   data () {

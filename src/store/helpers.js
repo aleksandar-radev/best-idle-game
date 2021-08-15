@@ -10,7 +10,7 @@ const helperMethods = {
 
     const rand = Math.random() * chances[chances.length - 1]
 
-    return Object.keys(materials)[chances.filter(el => el <= rand).length]
+    return materials[chances.filter(el => el <= rand).length]
   }
 }
 
