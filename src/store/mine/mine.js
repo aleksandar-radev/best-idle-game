@@ -1,17 +1,23 @@
 import mineAreas from './areas'
 import mineMaterials from './materials'
 import mineTool from './tool'
+import { Main } from '../classes'
 
-const main = {
+const main = new Main({
   active: false,
+  finding: null, // timeout
+  breaking: null, // interval
   activeArea: 0,
   material: null,
   action: 'mining',
   type: 'mine',
+  hp: null,
+  maxHp: null,
 
   areas: mineAreas,
-  _materials: mineMaterials,
+  materials: mineMaterials,
   tool: mineTool
-}
+
+})
 
 export default main

@@ -6,7 +6,7 @@
 import FieldTemplate from '../FieldTemplate.vue'
 
 export default {
-  name: 'mine',
+  name: 'Mine',
   components: {
     FieldTemplate
   },
