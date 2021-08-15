@@ -1,14 +1,13 @@
 <template lang="">
-<div class="grid" @click="startAction">
-  <div class="self-center" v-bind="material">
-    {{ material ?? `Click here to start ${getAction()}` }}
-    {{ getMaterial() }}
+<div class="grid select-none" @click="startAction">
+  <div class="self-center">
+    {{ material ?? `Click here to start ${action}` }}
   </div>
 </div>
 </template>
 
 <script>
-
+// import h from '@/store/helpers'
 export default {
   name: 'Material',
   components: {},
@@ -16,28 +15,28 @@ export default {
     type: String
   },
   methods: {
-    getAction () {
-      return this.action.charAt(0).toUpperCase() + this.action.slice(1)
-    },
     startAction () {
-      this.$methods.main(this.type)
-      console.log(this.$main[this.type].material)
-    },
-    getMaterial () {
-      return this.$main[this.type].material
+      this.$methods.main(this.mainType)
     }
   },
   data () {
     return {
-      action: this.$main[this.type].action,
-      material: this.$main[this.type].material
+      mainType: this.$main[this.type]
     }
   },
   created () {
+  },
+  computed: {
+    material () {
+      return this.mainType.material
+    },
+    action () {
+      const action = this.mainType.action
+      return action.charAt(0).toUpperCase() + action.slice(1)
+    }
   }
 }
 </script>
 
 <style module lang="scss">
-
 </style>

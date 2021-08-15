@@ -1,10 +1,9 @@
 import { reactive } from 'vue'
-import mineMain from './mine'
+import mineMain from './mine/mine'
 import h from './helpers'
-
 export default function (app, options) {
   const state = {
-    activeMenu: 'mine', // initial active menu, for start screen
+    activeMenu: 'Inventory', // initial active menu, for start screen
     setActiveMenu (menuItem) {
       this.activeMenu = menuItem
     },
@@ -19,13 +18,12 @@ export default function (app, options) {
   }
 
   const methods = {
-    main (type) {
-      const areaMaterials = main[type].areas[main[type].activeArea].materials
-      // setInterval(() => {
-      const mat = h.getRandomMaterial(areaMaterials)
-      main[type].material = mat
-      console.log(main[type].material)
-      // }, 5000)
+    main (mainType) {
+      const areaMaterials = mainType.areas[mainType.activeArea].materials
+      mainType.material = 'Searching...'
+      mainType.setInterval(() => {
+        mainType.material = h.getRandomMaterial(areaMaterials)
+      }, 2000)
     }
   }
 
