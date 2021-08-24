@@ -3,8 +3,8 @@
   <Tool class=" outline-black" :tool="this.tool"/>
   <Areas class="row-span-2 col-span-2 outline-black" :areas="this.areas"/>
   <Material class=" outline-black" :type="this.type"/>
-  <Log class="col-span-3 outline-black" />
-  <HealthBar class="col-span-3 outline-black asd" />
+  <Log class="col-span-3 outline-black" :type="'mine'"/>
+  <HealthBar class="col-span-3 outline-black asd" :type="this.type"/>
 </div>
 </template>
 

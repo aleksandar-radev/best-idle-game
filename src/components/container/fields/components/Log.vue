@@ -1,5 +1,8 @@
 <template lang="">
-<div>
+<div class="grid overflow-y-auto">
+  <div v-for="msg in mainType.log" :key="msg">
+    {{ msg }}
+  </div>
 </div>
 </template>
 
@@ -9,12 +12,17 @@
 export default {
   name: 'Log',
   components: {},
-  props: {},
+  props: {
+    type: String
+  },
   methods: {},
   data () {
-    return {}
+    return {
+      mainType: this.$main[this.type]
+    }
   },
   created () {
+    // if (scroll) sa('.log')[mainType.index].scrollTop = sa('.log')[mainType.index].scrollHeight
     return {}
   }
 }

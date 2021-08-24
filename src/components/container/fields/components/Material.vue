@@ -16,7 +16,11 @@ export default {
   },
   methods: {
     startAction () {
-      this.$methods.main(this.mainType)
+      if (this.mainType.active) {
+        this.$methods.stopMain(this.mainType)
+      } else {
+        this.$methods.main(this.mainType)
+      }
     }
   },
   data () {
