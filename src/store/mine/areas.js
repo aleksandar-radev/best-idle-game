@@ -1,6 +1,8 @@
-import materials from './materials.js'
 
-const areas = {
+import materials from './materials.js'
+import { Areas } from '../classes/areas'
+
+const areas = new Areas({
   0: {
     materials: {
       stone: { stats: materials.stone, chance: 1000 },
@@ -118,6 +120,6 @@ const areas = {
     requiredMaterialsForNextLevel: 20,
     unlocked: false
   }
-}
+})
 
 export default areas

@@ -1,6 +1,8 @@
 /* eslint-disable */
-let i = 0
+import { Materials } from '../classes/materials'
 
+// unique index for each material
+let i = 0
 const newMat = (props) => {
   return {
     index: i++,
@@ -10,17 +12,16 @@ const newMat = (props) => {
     totalDropped: 0,
     sellPrice: props.sp,
     buyPrice: props.bp,
-    health: props.hp,
+    hp: props.hp,
     xp: props.xp
   }
 }
 
-// i -> index
 // hp -> health points
 // xp -> experience points
 // sp -> sell price
 // bp -> buy price
-const materials = {
+const materials = new Materials({
   stone             : newMat({ name: 'stone'            , hp: 20      , xp: 1     , sp: 1     , bp: 5       }),
   ironOre           : newMat({ name: 'ironOre'          , hp: 50      , xp: 3     , sp: 2     , bp: 8       }),
   copper            : newMat({ name: 'copper'           , hp: 40      , xp: 2     , sp: 2     , bp: 6       }),
@@ -65,6 +66,6 @@ const materials = {
   zircon            : newMat({ name: 'zircon'           , hp: 280000  , xp: 10000 , sp: 10000 , bp: 80000   }),
   tanzanite         : newMat({ name: 'tanzanite'        , hp: 540000  , xp: 16000 , sp: 12000 , bp: 140000  }),
   blackStarDiopside : newMat({ name: 'blackStarDiopside', hp: 1800000 , xp: 50000 , sp: 99999 , bp: 1000000 })
-}
+})
 
 export default materials

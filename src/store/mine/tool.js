@@ -1,4 +1,6 @@
-const tool = {
+import { Tool } from '../classes/tool'
+
+const tool = new Tool({
   index: 0,
   upgrade: {
     index: 0,
@@ -16,16 +18,16 @@ const tool = {
     neededXpOnLevel: 20
   },
   damage: {
-    power: 5,
+    power: 50,
     initialPower: 5,
     powerOnLevel: 1,
     initialPowerOnLevel: 1,
     powerFromLevels: 0,
     powerFromUpgrades: 0
   },
-  aps: 2_000,
-  lookingForTime: 2_000,
+  aps: 2_00,
+  findingTime: 2_000,
   chanceForDoubleMaterial: 0
-}
+})
 
 export default tool

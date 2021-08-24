@@ -1,7 +1,7 @@
 import mineAreas from './areas'
 import mineMaterials from './materials'
 import mineTool from './tool'
-import { Main } from '../classes'
+import { Main } from '../classes/main'
 
 const main = new Main({
   active: false,
@@ -16,8 +16,21 @@ const main = new Main({
 
   areas: mineAreas,
   materials: mineMaterials,
-  tool: mineTool
+  tool: mineTool,
 
+  log: ['asdf',
+    'asdf',
+    'asdf',
+    'asdf',
+    'asdf',
+    'asdf',
+    'asdf',
+    'asdf',
+    'asdf',
+    'asdf',
+    'asdf',
+    'asdf',
+    'asdf']
 })
 
 export default main
