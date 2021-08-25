@@ -15,6 +15,7 @@ export default function (app, options) {
 
   const main = {
     coins: 10,
+    scroll: true,
     mine: mineMain
   }
 

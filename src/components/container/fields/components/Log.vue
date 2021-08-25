@@ -1,5 +1,7 @@
 <template lang="">
-<div class="grid overflow-y-auto">
+<div class="grid overflow-y-auto"
+  @mouseover="$main.scroll = false"
+  @mouseout="$main.scroll = true">
   <div v-for="msg in mainType.log" :key="msg">
     {{ msg }}
   </div>
@@ -15,19 +17,22 @@ export default {
   props: {
     type: String
   },
-  methods: {},
+  methods: {
+  },
   data () {
     return {
       mainType: this.$main[this.type]
     }
   },
-  created () {
-    // if (scroll) sa('.log')[mainType.index].scrollTop = sa('.log')[mainType.index].scrollHeight
-    return {}
+  updated: function () {
+    this.$nextTick(function () {
+      if (this.$main.scroll) {
+        this.$el.scrollTop = this.$el.scrollHeight
+      }
+    })
   }
 }
 </script>
 
 <style module lang="scss">
-
 </style>
