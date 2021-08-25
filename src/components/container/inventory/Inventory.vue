@@ -49,7 +49,6 @@ export default {
             materialsWithQuantity[material] = mat
           }
         }
-        console.log(materialsWithQuantity)
         return materialsWithQuantity
       }
     }
