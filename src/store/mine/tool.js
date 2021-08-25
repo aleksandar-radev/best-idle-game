@@ -26,7 +26,7 @@ const tool = new Tool({
     powerFromUpgrades: 0
   },
   aps: 2_00,
-  findingTime: 2_000,
+  findingTime: 2_00,
   chanceForDoubleMaterial: 0
 })
 

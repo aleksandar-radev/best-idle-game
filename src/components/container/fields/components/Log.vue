@@ -2,7 +2,7 @@
 <div class="grid overflow-y-auto"
   @mouseover="$main.scroll = false"
   @mouseout="$main.scroll = true">
-  <div v-for="msg in mainType.log" :key="msg">
+  <div v-for="(msg, index) in log" :key="index">
     {{ msg }}
   </div>
 </div>
@@ -21,7 +21,8 @@ export default {
   },
   data () {
     return {
-      mainType: this.$main[this.type]
+      mainType: this.$main[this.type],
+      MAX_LOG_MESSAGES: 100
     }
   },
   updated: function () {
@@ -30,6 +31,14 @@ export default {
         this.$el.scrollTop = this.$el.scrollHeight
       }
     })
+  },
+  computed: {
+    log: function () {
+      console.log(this.mainType.log.length)
+      return this.mainType.log.filter((msg, index) => {
+        return index >= this.mainType.log.length - this.MAX_LOG_MESSAGES
+      })
+    }
   }
 }
 </script>
