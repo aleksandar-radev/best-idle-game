@@ -27,7 +27,7 @@
     Locked. Level <strong>{{`${area.previousAreaLevelRequired}`}}</strong> {{`${previousArea.name}`}} required
   </div>
 
-  <div>
+  <div v-if="area.level === area.totalLevel">
     {{ `${area.materialsDropped} / ${area.requiredMaterialsForNextLevel}` }}
   </div>
 </div>
@@ -46,15 +46,23 @@ export default {
       return this.$main.mine.activeArea === this.area.index
     },
     setActive () {
-      this.$main.mine.activeArea = this.area.index
+      if (this.area.unlocked) {
+        this.$main.mine.activeArea = this.area.index
+      }
     },
     increaseLevel () {
-      if (this.area.level === this.area.totalLevel) {
+      if (!this.area.unlocked) return
+      if (this.area.level === this.area.totalLevel &&
+       this.area.materialsDropped === this.area.requiredMaterialsForNextLevel) {
+        this.area.materialsDropped = 0
         this.area.totalLevel++
+        this.area.level++
+      } else if (this.area.level < this.area.totalLevel) {
+        this.area.level++
       }
-      this.area.level++
     },
     decreaseLevel () {
+      if (!this.area.unlocked) return
       if (this.area.level > 1) this.area.level--
     },
     setLevel (e) {
@@ -64,11 +72,19 @@ export default {
   data () {
     return {
       area: this.areas[this.index],
-      previousArea: this.areas[Number(this.index) - 1]
+      previousArea: this.areas[Number(this.index) - 1],
+      nextArea: this.areas[Number(this.index) + 1]
     }
   },
   created () {
     return {}
+  },
+  updated () {
+    this.$nextTick(function () {
+      if (this.nextArea && this.area.level >= this.nextArea.previousAreaLevelRequired) {
+        this.nextArea.unlocked = true
+      }
+    })
   }
 }
 </script>
