@@ -6,7 +6,7 @@ const areas = new Areas({
   0: {
     materials: {
       stone: { stats: materials.stone, chance: 1000 },
-      ironOre: { stats: materials.ironOre, chance: 800 },
+      iron: { stats: materials.iron, chance: 800 },
       copper: { stats: materials.copper, chance: 700 },
       silver: { stats: materials.silver, chance: 500 },
       gold: { stats: materials.gold, chance: 400 },

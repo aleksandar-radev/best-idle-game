@@ -23,7 +23,7 @@ const newMat = (props) => {
 // bp -> buy price
 const materials = new Materials({
   stone             : newMat({ name: 'stone'            , hp: 20      , xp: 1     , sp: 1     , bp: 5       }),
-  ironOre           : newMat({ name: 'ironOre'          , hp: 50      , xp: 3     , sp: 2     , bp: 8       }),
+  iron           : newMat({ name: 'iron'          , hp: 50      , xp: 3     , sp: 2     , bp: 8       }),
   copper            : newMat({ name: 'copper'           , hp: 40      , xp: 2     , sp: 2     , bp: 6       }),
   silver            : newMat({ name: 'silver'           , hp: 100     , xp: 5     , sp: 3     , bp: 10      }),
   gold              : newMat({ name: 'gold'             , hp: 200     , xp: 20    , sp: 20    , bp: 45      }),
@@ -65,7 +65,7 @@ const materials = new Materials({
   howlite           : newMat({ name: 'howlite'          , hp: 170000  , xp: 6500  , sp: 4800  , bp: 9500    }),
   zircon            : newMat({ name: 'zircon'           , hp: 280000  , xp: 10000 , sp: 10000 , bp: 80000   }),
   tanzanite         : newMat({ name: 'tanzanite'        , hp: 540000  , xp: 16000 , sp: 12000 , bp: 140000  }),
-  blackStarDiopside : newMat({ name: 'blackStarDiopside', hp: 1800000 , xp: 50000 , sp: 99999 , bp: 1000000 })
+  blackStarDiopside : newMat({ name: 'Black star diopside', hp: 1800000 , xp: 50000 , sp: 99999 , bp: 1000000 })
 })
 
 export default materials

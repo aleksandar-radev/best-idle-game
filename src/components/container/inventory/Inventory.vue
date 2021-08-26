@@ -22,15 +22,14 @@ export default {
     }
   },
   data () {
-    const main = this.$main
     const all = {}
-    Object.keys(main).forEach((type) => {
+    Object.keys(this.$main).forEach((type) => {
       // use if main has other objects different than farming ones
       // if (Object.prototype.hasOwnProperty.call(main[type], 'materials')) {
-      if (main[type] instanceof Object) {
+      if (this.$main[type] instanceof Object) {
         all[type] = {
           shown: true,
-          materials: main[type].materials
+          materials: this.$main[type].materials
         }
       }
     })

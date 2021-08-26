@@ -34,7 +34,6 @@ export default {
   },
   computed: {
     log: function () {
-      console.log(this.mainType.log.length)
       return this.mainType.log.filter((msg, index) => {
         return index >= this.mainType.log.length - this.MAX_LOG_MESSAGES
       })
