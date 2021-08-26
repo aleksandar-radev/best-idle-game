@@ -2,6 +2,7 @@ import mineAreas from './areas'
 import mineMaterials from './materials'
 import mineTool from './tool'
 import { Main } from '../classes/main'
+import mineUpgrades from './upgrades'
 
 const main = new Main({
   active: false,
@@ -17,6 +18,7 @@ const main = new Main({
   areas: mineAreas,
   materials: mineMaterials,
   tool: mineTool,
+  upgrades: mineUpgrades,
 
   log: ['asdf',
     'asdf',
