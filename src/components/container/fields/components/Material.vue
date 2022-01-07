@@ -1,7 +1,7 @@
 <template lang="">
 <div class="grid select-none" @click="startAction">
   <div class="self-center">
-    {{ material ?? `Click here to start ${action}` }}
+    {{ material ?? `Click here to start poop ${action}` }}
   </div>
 </div>
 </template>
